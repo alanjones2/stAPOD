@@ -17,7 +17,7 @@ with st.sidebar:
     """)
 
 
-params = {'api_key': 'DEMO_KEY', 'date':d}
+params = {'api_key': 'RrVw3lyjiGOTSL3ufkFOGIEaUpkegPuAisOudUyG', 'date':d}
 response = requests.get('https://api.nasa.gov/planetary/apod', params=params)
 
 if response:
