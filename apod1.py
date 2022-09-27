@@ -3,7 +3,7 @@ import requests
 
 st.set_page_config(page_title=None, page_icon=None, layout="wide")
 
-st.title("NASA's Astronomy Picture of the day")
+st.title("NASA's Astronomy Picture of the Day")
  
 with st.sidebar:
 
