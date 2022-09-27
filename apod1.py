@@ -17,15 +17,14 @@ with st.sidebar:
     This web page lets you choose a particular date and displays the image, and its description, for that day.    
     """)
 
-
-params = {'api_key': 'RrVw3lyjiGOTSL3ufkFOGIEaUpkegPuAisOudUyG', 'date':d}
+params = {'api_key': st.secrets['nasaKey'], 'date':d}
 response = requests.get('https://api.nasa.gov/planetary/apod', params=params)
 
 if response:
     #st.json(response.json())
     data = response.json()
 
-    col1, col2 = st.columns(2)
+    col1, col2 = st.columns(2, gap="small")
     
     with col1:
         if data['media_type'] == 'video':
