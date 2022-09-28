@@ -20,6 +20,9 @@ with st.sidebar:
     This web page lets you choose a particular date and displays the image, and its description, for that day.    
     """)
 
+    st.write("You can an article describing this app here:")
+    st.markdown("[NASA Open APIs: The Astronomy Picture of the Day in Streamlit](https://medium.com/technofile/nasa-open-apis-the-astronomy-picture-of-the-day-in-streamlit-73d02ea5607e)")
+
 # Set the parameters for a requests call and get the data from the API
 params = {'api_key': st.secrets['nasaKey'], 'date':d}
 response = requests.get('https://api.nasa.gov/planetary/apod', params=params)
@@ -53,7 +56,7 @@ if response:
         st.title(data['title'])
         st.write(data['date'])
         st.write(data['explanation'])
-        
+
 # If the response is bad just print it out
 else:
     st.write(response.text)
